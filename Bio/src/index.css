@@ -51,6 +51,7 @@ html, body {
   background-color: transparent;
   padding: 50px;
   margin: 0;
+  cursor: pointer;
 }
 .options:hover {
   background-color: rgba(145, 86, 221, 0.404);
@@ -58,4 +59,7 @@ html, body {
 .boxContainer {
   position: relative;
   background-color: bisque;
+}
+.cursorBtn {
+  cursor: pointer;
 }
