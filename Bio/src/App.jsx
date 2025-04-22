@@ -19,6 +19,7 @@ function App() {
   return (
     <>
       <Background />
+      <img className='deskTopIcons' src="https://pbs.twimg.com/profile_images/1239961234868514816/yzD-YDss_400x400.png" alt="" />
       <Footer toggleBox={addBox} />
 
       {boxes.map(box => (
