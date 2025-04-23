@@ -3,6 +3,7 @@ import { useState } from 'react';
 import Footer from './components/Footer';
 import Background from './components/Background';
 import OpenBox from './components/openBox';
+import PlusSide from './components/PlusSide'; // <-- new import
 
 function App() {
   const [boxes, setBoxes] = useState([]);
@@ -19,7 +20,7 @@ function App() {
   return (
     <>
       <Background />
-      <img className='deskTopIcons' src="https://pbs.twimg.com/profile_images/1239961234868514816/yzD-YDss_400x400.png" alt="" />
+      <PlusSide onIconClick={addBox} /> {/* <-- use new component */}
       <Footer toggleBox={addBox} />
 
       {boxes.map(box => (
