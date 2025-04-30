@@ -114,7 +114,11 @@ export default function OpenBox({ id, removeBox }) {
 
       {/* Tab content */}
       <div style={{ marginTop: '10px' }}>
-        {selectedTab === 'tab1' && <p>This is content for Tab 1</p>}
+        {selectedTab === 'tab1' && <>
+        <p>plusside.net serves as a community calendar for the Esorts scene "Project M/+".</p>
+        
+        <p>This project has been my Project since day one of trying to learn to become a devloper, </p>
+        </>}
         {selectedTab === 'tab2' && <p>This is content for Tab 2</p>}
         {selectedTab === 'tab3' && <p>This is content for Tab 3</p>}
       </div>
