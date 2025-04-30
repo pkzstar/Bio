@@ -97,7 +97,7 @@ export default function OpenBox({ id, removeBox }) {
             border: '1px solid black',
           }}
         >
-          Tab 2
+          Desktop Hub
         </button>
         <button className='tabButtons'
           onClick={() => setSelectedTab('tab3')}
@@ -112,7 +112,7 @@ export default function OpenBox({ id, removeBox }) {
         </button>
       </div>
 
-      {/* Tab content */}
+      {/* tab 1 */}
       <div style={{ marginTop: '10px' }}>
         {selectedTab === 'tab1' && <>
         <a href="http://www.plusside.net"  target="_blank" rel="noopener noreferrer"><img className='tabBanner' src="https://github.com/pkzstar/Bio/blob/main/Bio/src/assets/plusside-logo.jpg?raw=true" alt="" /></a>
@@ -121,9 +121,20 @@ export default function OpenBox({ id, removeBox }) {
         <p>This project has been my primary learning project since day one of trying to become a developer, and it's one I intend to return to as my skills develop further over time.</p>
         <p> This project is primarily built with JS, HTML, CSS and some bootstrap but I am currently working to transfer this over to react and would like to pull data from tournaments for results automatically</p>
         </>}
-        {selectedTab === 'tab2' && <p>This is content for Tab 2</p>}
+      </div>
+
+      {/* tab 2 */}
+      <div style={{ marginTop: '10px' }}>
+        {selectedTab === 'tab2' && <>
+        <a href="http://www.plusside.net"  target="_blank" rel="noopener noreferrer"><img className='tabBanner' src="https://github.com/pkzstar/Bio/blob/main/Bio/src/assets/plusside-logo.jpg?raw=true" alt="" /></a>
+        <p>plusside.net serves as a community calendar for the Esorts scene "Project M/+".</p>
+
+        <p>This project has been my primary learning project since day one of trying to become a developer, and it's one I intend to return to as my skills develop further over time.</p>
+        <p> This project is primarily built with JS, HTML, CSS and some bootstrap but I am currently working to transfer this over to react and would like to pull data from tournaments for results automatically</p>
+        </>}
         {selectedTab === 'tab3' && <p>This is content for Tab 3</p>}
       </div>
+
     </div>
   );
 }
