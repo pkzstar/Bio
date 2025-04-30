@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 
 export default function OpenBox({ id, removeBox }) {
   const [isDragging, setIsDragging] = useState(false);
-  const [position, setPosition] = useState({ x: 100, y: 100 });
+  const [position, setPosition] = useState({ x: 950, y: 250 });
   const [offset, setOffset] = useState({ x: 0, y: 0 });
   const [selectedTab, setSelectedTab] = useState('tab1'); // Track the selected tab
 

@@ -3,8 +3,7 @@ import { useState } from 'react';
 import Footer from './components/Footer';
 import Background from './components/Background';
 import OpenBox from './components/openBox';
-import PlusSide from './components/PlusSide'; // <-- new import
-import DeskTopStar from './components/DeskTopStar';
+import DeskTopIcons from './components/DeskTopIcons';
 
 function App() {
   const [boxes, setBoxes] = useState([]);
@@ -21,8 +20,7 @@ function App() {
   return (
     <>
       <Background />
-      <PlusSide onIconClick={addBox} /> {/* <-- use new component */}
-      <DeskTopStar onIconClick={addBox} />
+      <DeskTopIcons onIconClick={addBox} />
       <Footer toggleBox={addBox} />
 
       {boxes.map(box => (

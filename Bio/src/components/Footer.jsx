@@ -46,7 +46,7 @@ export function Footer({ toggleBox }) {
             className="options"
             onClick={() => handleOptionClick(toggleBox)}
           >
-            Windows
+            All Desktop Items
           </p>
           <p
             className="options"

@@ -64,6 +64,10 @@ html, body {
 .cursorBtn {
   cursor: pointer;
 }
+.deskTopIconsCont {
+  display: flex;
+  flex-direction: column;
+}
 .deskTopIcons {
   position: relative;
   width: 75px;
