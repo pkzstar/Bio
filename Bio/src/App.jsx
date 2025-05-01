@@ -3,28 +3,40 @@ import { useState } from 'react';
 import Footer from './components/Footer';
 import Background from './components/Background';
 import OpenBox from './components/openBox';
-import DeskTopIcons from './components/DeskTopIcons';
+import DeskTopIcons from './components/DesktopInterface';
 
 function App() {
   const [boxes, setBoxes] = useState([]);
 
-  const addBox = () => {
-    const id = Date.now();
-    setBoxes(prev => [...prev, { id }]);
+  // Adds a box with a unique key and the icon type
+  const addBox = (iconId) => {
+    const uniqueKey = `${iconId}-${Date.now()}`;
+    setBoxes(prev => [...prev, { key: uniqueKey, type: iconId }]);
   };
 
-  const removeBox = (idToRemove) => {
-    setBoxes(prev => prev.filter(box => box.id !== idToRemove));
+  // Handles click on desktop icons
+  const handleIconClick = (e) => {
+    const iconId = e.target.id;
+    addBox(iconId);
+  };
+
+  // Removes a box by its unique key
+  const removeBox = (keyToRemove) => {
+    setBoxes(prev => prev.filter(box => box.key !== keyToRemove));
   };
 
   return (
     <>
       <Background />
-      <DeskTopIcons onIconClick={addBox} />
+      <DeskTopIcons onIconClick={handleIconClick} />
       <Footer toggleBox={addBox} />
 
       {boxes.map(box => (
-        <OpenBox key={box.id} id={box.id} removeBox={removeBox} />
+        <OpenBox
+          key={box.key}
+          id={box.type}
+          removeBox={() => removeBox(box.key)}
+        />
       ))}
     </>
   );

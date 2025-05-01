@@ -68,6 +68,16 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+.iconPopUp {
+  position: absolute;
+  border: 1px solid black;
+  background-color: lightblue;
+  padding: 10px;
+  width: 300px;
+  user-select: none;
+  z-index: 1000;
+}
+
 .deskTopIcons {
   position: relative;
   width: 75px;
