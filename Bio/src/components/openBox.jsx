@@ -61,17 +61,9 @@ export default function OpenBox({ id, removeBox }) {
     >
       {/* Header with tab navigation and close button */}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <button
-          onClick={() => removeBox(id)}
-          style={{
-            border: '3px solid white',
-            background: 'violet',
-            fontWeight: 'bold',
-            cursor: 'pointer',
-            margin: '-7% 0% 0 100%',
-          }}
-        >
-          ×
+        <button className='xButton'
+          onClick={() => removeBox(id)}>
+          x
         </button>
       </div>
 
@@ -126,8 +118,9 @@ export default function OpenBox({ id, removeBox }) {
       {/* tab 2 */}
       <div style={{ marginTop: '10px' }}>
         {selectedTab === 'tab2' && <>
-        <a href="http://www.plusside.net"  target="_blank" rel="noopener noreferrer"><img className='tabBanner' src="https://github.com/pkzstar/Bio/blob/main/Bio/src/assets/plusside-logo.jpg?raw=true" alt="" /></a>
-        <p>plusside.net serves as a community calendar for the Esorts scene "Project M/+".</p>
+        <a href="/"  target="_blank" rel="noopener noreferrer"><img className='tabBanner' src="https://static.vecteezy.com/system/resources/previews/011/628/869/non_2x/cute-cartoon-world-space-day-background-free-vector.jpg" alt="" /></a>
+        <p>This is the site You are currently on!</p>
+        <p>I am hoping to use this in the future to showcase future projects as well as maybe cloning it to use as a hub to list useful pages for the Esports scene "Project M/+</p>
 
       
         </>}

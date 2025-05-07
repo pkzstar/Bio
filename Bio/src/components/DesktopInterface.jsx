@@ -6,9 +6,23 @@ function OpenDeskTopItem({ id, onClose }) {
   const renderContent = () => {
     switch (id) {
       case 'iconsPlus':
-        return <p>This is the Plus icon window.</p>;
+        return <div>
+       <>
+        <a href="http://www.plusside.net"  target="_blank" rel="noopener noreferrer"><img className='tabBanner' src="https://github.com/pkzstar/Bio/blob/main/Bio/src/assets/plusside-logo.jpg?raw=true" alt="" /></a>
+        <p>plusside.net serves as a community calendar for the Esports scene "Project M/+".</p>
+
+        <p>This project has been my primary learning project since day one of trying to become a developer, and it's one I intend to return to as my skills develop further over time.</p>
+        <p> This project is primarily built with JS, HTML, CSS and some bootstrap but I am currently working to transfer this over to react and would like to pull data from tournaments for results automatically</p>
+        </>
+      </div>;
       case 'iconsDesk':
-        return <p>This is the Desk icon window.</p>;
+        return <div>
+       <>
+        <a href="/"  target="_blank" rel="noopener noreferrer"><img className='tabBanner' src="https://static.vecteezy.com/system/resources/previews/011/628/869/non_2x/cute-cartoon-world-space-day-background-free-vector.jpg" alt="" /></a>
+        <p>This is the site You are currently on!</p>
+        <p>I am hoping to use this in the future to showcase future projects as well as maybe cloning it to use as a hub to list useful pages for the Esports scene "Project M/+</p>
+        </>
+      </div>;
       // Add more cases here for additional icons
       default:
         return <p>Unknown window.</p>;
@@ -16,11 +30,12 @@ function OpenDeskTopItem({ id, onClose }) {
   };
 
   return (
-    <div className="iconPopUp">
-      <div className="popupHeader">
-        <span>{id}</span>
-        <button onClick={onClose}>X</button>
+    <div  className="iconPopUp boxContainer">
+      <div className='xButtonMargin' style={{ display: 'flex', justifyContent: 'space-between' }}>
+      <button className='xButton' onClick={onClose}>x</button>
       </div>
+              
+        {/* <span>{id}</span> */}
       <div className="popupContent">
         {renderContent()}
       </div>
