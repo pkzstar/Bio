@@ -4,6 +4,8 @@ import Footer from './components/Footer';
 import Background from './components/Background';
 import OpenBox from './components/openBox';
 import DeskTopIcons from './components/DesktopInterface';
+import BackgroundMusic from './components/BackgroundMusic';
+
 
 
 function App() {
@@ -28,9 +30,8 @@ function App() {
 
   return (
     <>
-
-
       <Background />
+      <BackgroundMusic />
       <DeskTopIcons onIconClick={handleIconClick} />
       <Footer toggleBox={addBox} />
 

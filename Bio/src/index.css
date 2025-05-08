@@ -112,6 +112,9 @@ p {
   border-radius: 20%;
   margin: 1%;
 }
+.tabButtons:hover {
+  cursor: pointer;
+}
 .tabBannerContainer {
 
   max-height: 300px;
