@@ -2,17 +2,26 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const BackgroundMusic = () => {
   const audioRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(() => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [hasLoadedSetting, setHasLoadedSetting] = useState(false);
+
+  // Load saved preference
+  useEffect(() => {
     const saved = localStorage.getItem('backgroundMusic');
-    return saved === 'true'; // convert string to boolean
-  });
+    if (saved === 'true') {
+      setIsPlaying(true);
+    }
+    setHasLoadedSetting(true);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;
+    if (!hasLoadedSetting) return;
 
     if (isPlaying) {
       audio.play().catch((e) => {
-        console.warn('Autoplay blocked or failed:', e);
+        console.warn('Autoplay blocked:', e);
+        setIsPlaying(false); // Revert UI if autoplay is blocked
       });
     } else {
       audio.pause();
@@ -20,19 +29,19 @@ const BackgroundMusic = () => {
     }
 
     localStorage.setItem('backgroundMusic', isPlaying);
-  }, [isPlaying]);
+  }, [isPlaying, hasLoadedSetting]);
 
   const toggleMusic = () => {
     setIsPlaying((prev) => !prev);
   };
 
   return (
-    <div style={{ position: 'fixed', bottom: '1rem', right: '1rem', zIndex: 999 }}>
+    <div>
       <audio ref={audioRef} loop>
-        <source src="/path-to-your-music-file.mp3" type="audio/mpeg" />
-        Your browser does not support the audio element.
+      <source src="/Bio/public/sounds/03. Save Theme.mp3" type="audio/mpeg" />
+      Your browser does not support the audio element.
       </audio>
-      <button onClick={toggleMusic} style={{ padding: '8px 12px', borderRadius: '6px' }}>
+      <button className='musicBtn' onClick={toggleMusic} style={{ padding: '8px 12px', borderRadius: '6px' }}>
         {isPlaying ? 'Turn Music Off' : 'Turn Music On'}
       </button>
     </div>

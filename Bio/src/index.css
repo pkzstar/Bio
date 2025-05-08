@@ -129,4 +129,55 @@ p {
 }
 .tabBanner:hover {
   cursor: pointer;
+
+  /* music start */
 }
+
+.musicBtn {
+  right: 0;
+  z-index: 999;
+  padding: 10px 16px;
+  border: 2px solid #ffffff66;
+  border-radius: 12px;
+  background: linear-gradient(145deg, #0d1b2a, #1b263b);
+  color: #e0e1dd;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px #00f5d4, 0 0 20px #00f inset;
+  transition: all 0.3s ease;
+  position: fixed;
+  overflow: hidden;
+}
+.musicBtn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 60%);
+  animation: starfield 4s linear infinite;
+  z-index: 0;
+}
+
+.musicBtn:hover {
+  box-shadow: 0 0 16px #00f5d4, 0 0 32px #00f inset;
+  transform: scale(1.05);
+}
+
+.musicBtn:focus {
+  outline: none;
+  box-shadow: 0 0 18px #ffb703, 0 0 28px #fb8500 inset;
+}
+
+@keyframes starfield {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(50%, 50%);
+  }
+}
+
+  /* music end */
