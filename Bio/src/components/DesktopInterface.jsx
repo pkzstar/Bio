@@ -1,5 +1,24 @@
 import React, { useState } from 'react';
 
+const playClickSound = () => {
+  const sound = document.getElementById("click-sound");
+  if (sound) {
+    sound.currentTime = 0;
+    sound.play();
+  }
+};
+
+const playClickSoundClose = () => {
+  const soundClose = document.getElementById("click-sound-close");
+
+  if (soundClose) {
+    soundClose.currentTime = 0;
+    soundClose.play();
+  }
+};
+
+
+
 function OpenDeskTopItem({ id, onClose }) {
   if (!id) return null;
 
@@ -32,7 +51,13 @@ function OpenDeskTopItem({ id, onClose }) {
   return (
     <div  className="iconPopUp boxContainer">
       <div className='xButtonMargin' style={{ display: 'flex', justifyContent: 'space-between' }}>
-      <button className='xButton' onClick={onClose}>x</button>
+      <button className='xButton' 
+      onClick={() => {
+        playClickSoundClose();
+        onClose();
+      }}
+      
+      >x</button>
       </div>
               
         {/* <span>{id}</span> */}
@@ -46,27 +71,37 @@ function OpenDeskTopItem({ id, onClose }) {
 function DeskTopIcons({ onIconClick }) {
   return (
     
+    
     <div className="deskTopIconsCont">
       <img
         id="iconsPlus"
         className="deskTopIcons"
         src="https://pbs.twimg.com/profile_images/1239961234868514816/yzD-YDss_400x400.png"
         alt="Plus Icon"
-        onClick={(e) => onIconClick(e.target.id)}
+        onClick={(e) => {
+          playClickSound();
+          onIconClick(e.target.id)}}
       />
       <img
         id="iconsDesk"
         className="deskTopIcons"
         src="https://github.com/pkzstar/Bio/blob/main/Bio/src/assets/starslogo.png?raw=true"
         alt="Desk Icon"
-        onClick={(e) => onIconClick(e.target.id)}
+        onClick={(e) => {
+        playClickSound();
+        onIconClick(e.target.id)}
+        }
+        
       />
             <img
         id="iconsRecycle"
         className="deskTopIcons"
         src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTEyL3Jhd3BpeGVsb2ZmaWNlMl9hX2hhbmQtZHJhd25fZW52aXJvbm1lbnRhbF9pY29uX2Rvb2RsZV9zdHlsZV9mZV8zYWQwNDliMC1mZDgxLTRlOGItYmUwYy1iMTdjZmVjNDA5MWMtbTRtaWE0MjUucG5n.png"
         alt="Desk Icon"
-        onClick={(e) => onIconClick(e.target.id)}
+        onClick={(e) => {
+          playClickSound();
+          onIconClick(e.target.id)}
+          }
       />
     </div>
   );
@@ -85,6 +120,9 @@ export default function DesktopInterface() {
 
   return (
     <div>
+      <audio id="click-sound" src="/Bio/public/sounds/mouseclick2.mp3" preload="auto" />
+      <audio id="click-sound-close" src="/Bio/public/sounds/mouse-click-290204.mp3" preload="auto" />
+
       <DeskTopIcons onIconClick={handleIconClick} />
       <OpenDeskTopItem id={activeWindow} onClose={handleCloseWindow} />
     </div>

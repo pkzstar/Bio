@@ -1,5 +1,24 @@
 import { useState, useEffect, useRef } from 'react';
 
+
+const playClickSoundClose = () => {
+  const soundClose = document.getElementById("click-sound-close");
+
+  if (soundClose) {
+    soundClose.currentTime = 0;
+    soundClose.play();
+  }
+};
+
+const playClickSoundPage = () => {
+  const soundPage = document.getElementById("click-sound-page");
+
+  if (soundPage) {
+    soundPage.currentTime = 0;
+    soundPage.play();
+  }
+};
+
 export default function OpenBox({ id, removeBox }) {
   const [isDragging, setIsDragging] = useState(false);
   const [position, setPosition] = useState({ x: 950, y: 250 });
@@ -43,6 +62,7 @@ export default function OpenBox({ id, removeBox }) {
   }, [isDragging, offset]);
 
   return (
+    
     <div
       ref={boxRef}
       className="boxContainer"
@@ -62,15 +82,24 @@ export default function OpenBox({ id, removeBox }) {
       {/* Header with tab navigation and close button */}
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <button className='xButton'
-          onClick={() => removeBox(id)}>
+          onClick={() => {
+            playClickSoundClose();
+            removeBox(id)}
+          }
+          
+          >
           x
         </button>
       </div>
 
       {/* Tab buttons */}
       <div style={{ display: 'flex', marginTop: '10px' }}>
+      <audio id="click-sound-page" src="/Bio/public/sounds/page-turn02-103822.mp3" preload="auto" />
         <button className='tabButtons'
-          onClick={() => setSelectedTab('tab1')}
+          onClick={() => {
+            playClickSoundPage();
+            setSelectedTab('tab1');
+          }}
           style={{
             flex: 1,
             padding: '5px',
@@ -81,7 +110,10 @@ export default function OpenBox({ id, removeBox }) {
           Plus Side
         </button>
         <button className='tabButtons'
-          onClick={() => setSelectedTab('tab2')}
+          onClick={() => {
+            playClickSoundPage();
+            setSelectedTab('tab2');
+          }}
           style={{
             flex: 1,
             padding: '5px',
@@ -92,7 +124,10 @@ export default function OpenBox({ id, removeBox }) {
           Desktop Hub
         </button>
         <button className='tabButtons'
-          onClick={() => setSelectedTab('tab3')}
+          onClick={() => {
+            playClickSoundPage();
+            setSelectedTab('tab3');
+          }}
           style={{
             flex: 1,
             padding: '5px',

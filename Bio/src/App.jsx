@@ -5,6 +5,7 @@ import Background from './components/Background';
 import OpenBox from './components/openBox';
 import DeskTopIcons from './components/DesktopInterface';
 
+
 function App() {
   const [boxes, setBoxes] = useState([]);
 
@@ -27,6 +28,8 @@ function App() {
 
   return (
     <>
+
+
       <Background />
       <DeskTopIcons onIconClick={handleIconClick} />
       <Footer toggleBox={addBox} />
