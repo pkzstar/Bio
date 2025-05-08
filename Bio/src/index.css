@@ -1,3 +1,6 @@
+* {
+  font-family: 'Noto Sans';
+}
 html, body {
   margin: 0;
   overflow: hidden; /* ✨ removes scrollbars completely */
