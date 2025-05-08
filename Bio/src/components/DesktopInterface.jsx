@@ -61,6 +61,13 @@ function DeskTopIcons({ onIconClick }) {
         alt="Desk Icon"
         onClick={(e) => onIconClick(e.target.id)}
       />
+            <img
+        id="iconsRecycle"
+        className="deskTopIcons"
+        src="https://images.rawpixel.com/image_png_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDI0LTEyL3Jhd3BpeGVsb2ZmaWNlMl9hX2hhbmQtZHJhd25fZW52aXJvbm1lbnRhbF9pY29uX2Rvb2RsZV9zdHlsZV9mZV8zYWQwNDliMC1mZDgxLTRlOGItYmUwYy1iMTdjZmVjNDA5MWMtbTRtaWE0MjUucG5n.png"
+        alt="Desk Icon"
+        onClick={(e) => onIconClick(e.target.id)}
+      />
     </div>
   );
 }
