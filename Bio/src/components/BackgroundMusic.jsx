@@ -38,7 +38,7 @@ const BackgroundMusic = () => {
   return (
     <div>
       <audio ref={audioRef} loop>
-      <source src="/Bio/public/sounds/03. Save Theme.mp3" type="audio/mpeg" />
+      <source src="https://github.com/pkzstar/Bio/raw/refs/heads/main/Bio/public/sounds/03.%20Save%20Theme.mp3" type="audio/mpeg" />
       Your browser does not support the audio element.
       </audio>
       <button className='musicBtn' onClick={toggleMusic} style={{ padding: '8px 12px', borderRadius: '6px' }}>

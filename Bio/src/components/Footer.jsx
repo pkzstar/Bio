@@ -56,8 +56,8 @@ export function Footer({ toggleBox }) {
 
     
     <div className="footerContainer">
-          <audio id="click-sound" src="/sounds/open.mp3" preload="auto"></audio>
-          <audio id="click-sound-close" src="/sounds/close.mp3" preload="auto"></audio>
+          <audio id="click-sound" src="https://github.com/pkzstar/Bio/raw/refs/heads/main/Bio/public/sounds/mouse-click-290204.mp3" preload="auto"></audio>
+          <audio id="click-sound-close" src="https://github.com/pkzstar/Bio/raw/refs/heads/main/Bio/public/sounds/mouse-click-290204.mp3" preload="auto"></audio>
 <img
   className="startBtn"
   src="https://images.vexels.com/media/users/3/211367/isolated/preview/2747cfb9e3b7520b0d6a1a55b84224ee-magic-crescent-moon-icon.png"

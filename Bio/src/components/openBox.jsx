@@ -94,7 +94,7 @@ export default function OpenBox({ id, removeBox }) {
 
       {/* Tab buttons */}
       <div style={{ display: 'flex', marginTop: '10px' }}>
-      <audio id="click-sound-page" src="/Bio/public/sounds/page-turn02-103822.mp3" preload="auto" />
+      <audio id="click-sound-page" src="https://github.com/pkzstar/Bio/raw/refs/heads/main/Bio/public/sounds/page-turn02-103822.mp3" preload="auto" />
         <button className='tabButtons'
           onClick={() => {
             playClickSoundPage();

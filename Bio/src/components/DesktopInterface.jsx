@@ -119,8 +119,8 @@ export default function DesktopInterface() {
 
   return (
     <div>
-      <audio id="click-sound" src="/Bio/public/sounds/mouseclick2.mp3" preload="auto" />
-      <audio id="click-sound-close" src="/Bio/public/sounds/mouse-click-290204.mp3" preload="auto" />
+      <audio id="click-sound" src="https://github.com/pkzstar/Bio/raw/refs/heads/main/Bio/public/sounds/mouseclick2.mp3" preload="auto" />
+      <audio id="click-sound-close" src="https://github.com/pkzstar/Bio/raw/refs/heads/main/Bio/public/sounds/mouse-click-290204.mp3" preload="auto" />
 
       <DeskTopIcons onIconClick={handleIconClick} />
       <OpenDeskTopItem id={activeWindow} onClose={handleCloseWindow} />
