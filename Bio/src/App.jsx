@@ -5,32 +5,33 @@ import Background from './components/Background';
 import OpenBox from './components/openBox';
 import DeskTopIcons from './components/DesktopInterface';
 import BackgroundMusic from './components/BackgroundMusic';
-
-
+import BackgroundToggle from './components/BackgroundToggle'; // you can remove ModeToggle if not using it
 
 function App() {
+  const [mode, setMode] = useState('light');
   const [boxes, setBoxes] = useState([]);
 
-  // Adds a box with a unique key and the icon type
   const addBox = (iconId) => {
     const uniqueKey = `${iconId}-${Date.now()}`;
     setBoxes(prev => [...prev, { key: uniqueKey, type: iconId }]);
   };
 
-  // Handles click on desktop icons
   const handleIconClick = (e) => {
     const iconId = e.target.id;
     addBox(iconId);
   };
 
-  // Removes a box by its unique key
   const removeBox = (keyToRemove) => {
     setBoxes(prev => prev.filter(box => box.key !== keyToRemove));
   };
 
   return (
     <>
-      <Background />
+      <div className={mode}>
+        <BackgroundToggle mode={mode} setMode={setMode} />
+        <Background mode={mode} />
+      </div>
+
       <BackgroundMusic />
       <DeskTopIcons onIconClick={handleIconClick} />
       <Footer toggleBox={addBox} />
