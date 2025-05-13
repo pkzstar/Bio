@@ -160,12 +160,10 @@ p {
   animation: starfield 4s linear infinite;
   z-index: 0;
 }
-
 .musicBtn:hover {
   box-shadow: 0 0 16px #00f5d4, 0 0 32px #00f inset;
   transform: scale(1.05);
 }
-
 .musicBtn:focus {
   outline: none;
   box-shadow: 0 0 18px #ffb703, 0 0 28px #fb8500 inset;
@@ -180,4 +178,18 @@ p {
   }
 }
 
+.volumeSlider {
+  position: absolute;
+  top: 40px;
+  left: 94%;
+  z-index: 1000;
+}
+
+.musicContainer {
+  right: 12px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* ensures right alignment */
+}
   /* music end */
